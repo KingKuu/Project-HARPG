@@ -14,6 +14,10 @@ config/name="MMBNbutPOKEMON"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariables="*uid://c0d3quq1po42x"
+
 [display]
 
 window/size/viewport_width=1920
@@ -82,6 +86,5 @@ pointing/emulate_touch_from_mouse=true
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1

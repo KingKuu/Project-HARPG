@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b10isfq3mi1sm"]
+
+[node name="camera_rig" type="Node3D" unique_id=527701649]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=815511875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+projection = 1
+size = 3.557032

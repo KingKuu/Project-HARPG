@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://blas1qx7k3546"]
+
+[ext_resource type="Texture2D" uid="uid://cwyp7gj73ua14" path="res://icon.svg" id="1_a7161"]
+[ext_resource type="Script" uid="uid://p433rovvs0x1" path="res://components/grid_cell/grid_cell.gd" id="2_m0aqr"]
+
+[node name="grid_cell" type="Sprite3D" unique_id=1316045196]
+transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, 0.8, 0, -0.8, -3.4969112e-08, 0, 0, 0)
+texture = ExtResource("1_a7161")
+script = ExtResource("2_m0aqr")
