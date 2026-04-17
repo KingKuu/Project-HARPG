@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://b6h6fc6xx1q3k"]
 
-[ext_resource type="Script" uid="uid://dyelw4gaexsxe" path="res://scenes/test_scene/test_scene.gd" id="1_1x7oe"]
+[ext_resource type="Script" uid="uid://dyelw4gaexsxe" path="res://scenes/combat_scene.gd" id="1_1x7oe"]
 [ext_resource type="PackedScene" uid="uid://b10isfq3mi1sm" path="res://components/camera_rig/camera_rig.tscn" id="1_8pyld"]
 [ext_resource type="PackedScene" uid="uid://c84ss4h7tmd10" path="res://components/combat_grid/combat_grid.tscn" id="2_mndh0"]
+[ext_resource type="PackedScene" uid="uid://c0sdvvu74h2ur" path="res://critters/_base/critter.tscn" id="4_l4ihe"]
 
-[node name="test_scene" type="Node3D" unique_id=1428012826 node_paths=PackedStringArray("combat_grid")]
+[node name="test_scene" type="Node3D" unique_id=1428012826 node_paths=PackedStringArray("combat_grid", "camera_rig", "active_critter")]
 script = ExtResource("1_1x7oe")
 combat_grid = NodePath("combat_grid")
+camera_rig = NodePath("camera_rig")
+active_critter = NodePath("critter")
 
 [node name="camera_rig" parent="." unique_id=527701649 instance=ExtResource("1_8pyld")]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 2.5, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 2.5, 0, 1)
 
 [node name="combat_grid" parent="." unique_id=724599428 instance=ExtResource("2_mndh0")]
+
+[node name="critter" parent="." unique_id=369006010 instance=ExtResource("4_l4ihe")]
