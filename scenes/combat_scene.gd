@@ -7,6 +7,9 @@ extends Node3D
 
 @export var active_critter:Critter # reference to a child critter, will expand to 2 or 4 critters for combat purposes.
 
+@export var camera_offset:Vector3
+
+var grid_center:Vector3
 var move_smoothing:float = 0.5 # amount of smoothing when tweening the movement of character, currently unused.
 
 func _ready() -> void:
@@ -21,9 +24,10 @@ func _ready() -> void:
 		push_error("No active critter for combat scene " + name + "!")
 		return
 	
-	# combat scene setup
-	combat_grid.setup_grid()
+	# combat grid and camera position setup.
+	camera_rig.position = combat_grid.setup_grid() + camera_offset
 	
+	# set camera to place player side on left of screen.
 	camera_rig.set_perspective(active_critter.team)
 	
 	# for testing, should be called when a critter is summoned into combat.
@@ -40,7 +44,7 @@ func move_request(direction:Vector2i) -> void:
 		active_critter.team):
 		active_critter.grid_position += adjusted_direction
 		var target_cell:GridCell = combat_grid.grid[active_critter.grid_position.x][active_critter.grid_position.y]
-		active_critter.position = target_cell.global_position
+		active_critter.move_to(Vector3(target_cell.global_position.x, 0, target_cell.global_position.z))
 
 # summons critters in combat, currently only used in ready check, should be used everytime trainer summons a critter.
 func summon_critter(critter:Critter) -> void:

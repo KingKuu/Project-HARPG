@@ -3,17 +3,43 @@
 [ext_resource type="Script" uid="uid://dyelw4gaexsxe" path="res://scenes/combat_scene.gd" id="1_1x7oe"]
 [ext_resource type="PackedScene" uid="uid://b10isfq3mi1sm" path="res://components/camera_rig/camera_rig.tscn" id="1_8pyld"]
 [ext_resource type="PackedScene" uid="uid://c84ss4h7tmd10" path="res://components/combat_grid/combat_grid.tscn" id="2_mndh0"]
+[ext_resource type="PackedScene" uid="uid://blas1qx7k3546" path="res://components/grid_cell/grid_cell.tscn" id="4_doi4a"]
 [ext_resource type="PackedScene" uid="uid://c0sdvvu74h2ur" path="res://critters/_base/critter.tscn" id="4_l4ihe"]
+[ext_resource type="PackedScene" uid="uid://dlefrgpg8g8h6" path="res://components/heads_up_display/heads_up_display.tscn" id="5_wgdak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_doi4a"]
+albedo_color = Color(0.47040004, 0.56, 0.56, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vrddd"]
+material = SubResource("StandardMaterial3D_doi4a")
+size = Vector2(14, 14)
+center_offset = Vector3(0, -0.1, 0)
 
 [node name="test_scene" type="Node3D" unique_id=1428012826 node_paths=PackedStringArray("combat_grid", "camera_rig", "active_critter")]
 script = ExtResource("1_1x7oe")
 combat_grid = NodePath("combat_grid")
 camera_rig = NodePath("camera_rig")
 active_critter = NodePath("critter")
+camera_offset = Vector3(-0.5, 0, 0)
 
 [node name="camera_rig" parent="." unique_id=527701649 instance=ExtResource("1_8pyld")]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 2.5, 0, 1)
 
 [node name="combat_grid" parent="." unique_id=724599428 instance=ExtResource("2_mndh0")]
+cell_sprite = ExtResource("4_doi4a")
 
 [node name="critter" parent="." unique_id=369006010 instance=ExtResource("4_l4ihe")]
+
+[node name="TEMPORARYSUN" type="DirectionalLight3D" parent="." unique_id=1960460417]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="heads_up_display" parent="." unique_id=91321607 instance=ExtResource("5_wgdak")]
+
+[node name="background" type="Node3D" parent="." unique_id=1545521953]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="background" unique_id=503426635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+mesh = SubResource("PlaneMesh_vrddd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="background" unique_id=2101939918]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 3, -1)
+mesh = SubResource("PlaneMesh_vrddd")

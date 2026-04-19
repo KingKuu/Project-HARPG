@@ -1,0 +1,319 @@
+[gd_scene format=3 uid="uid://dlefrgpg8g8h6"]
+
+[node name="heads_up_display" type="CanvasLayer" unique_id=91321607]
+
+[node name="combat" type="Control" parent="." unique_id=1399009492]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="health" type="Panel" parent="combat" unique_id=1508624867]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="team_divider" type="HBoxContainer" parent="combat/health" unique_id=84564248]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="info_divider_left" type="VBoxContainer" parent="combat/health/team_divider" unique_id=2021577351]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="health_bar" type="ColorRect" parent="combat/health/team_divider/info_divider_left" unique_id=340958705]
+custom_minimum_size = Vector2(550, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="name" type="Label" parent="combat/health/team_divider/info_divider_left" unique_id=156820140]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Critter Name"
+
+[node name="info_divider_right" type="VBoxContainer" parent="combat/health/team_divider" unique_id=345610545]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="health_bar" type="ColorRect" parent="combat/health/team_divider/info_divider_right" unique_id=1114571544]
+custom_minimum_size = Vector2(550, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="name" type="Label" parent="combat/health/team_divider/info_divider_right" unique_id=1176678501]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Critter Name"
+
+[node name="non_mobile" type="Panel" parent="combat" unique_id=1260349982]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ability_divider" type="HBoxContainer" parent="combat/non_mobile" unique_id=1909565029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ability" type="Label" parent="combat/non_mobile/ability_divider" unique_id=661067279]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Ability"
+
+[node name="item" type="Label" parent="combat/non_mobile/ability_divider" unique_id=1536967401]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Item"
+
+[node name="divider" type="Control" parent="combat/non_mobile/ability_divider" unique_id=1727674452]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="move_1" type="Label" parent="combat/non_mobile/ability_divider" unique_id=1819601984]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Move 1"
+
+[node name="move_2" type="Label" parent="combat/non_mobile/ability_divider" unique_id=530452322]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Move 2"
+
+[node name="move_3" type="Label" parent="combat/non_mobile/ability_divider" unique_id=65456471]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Move 3"
+
+[node name="move_4" type="Label" parent="combat/non_mobile/ability_divider" unique_id=472370362]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Move 4"
+
+[node name="mobile" type="Panel" parent="combat" unique_id=2591102]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="control_divider" type="HBoxContainer" parent="combat/mobile" unique_id=1999824543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="move_buttons" type="Control" parent="combat/mobile/control_divider" unique_id=1985962939]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="up" type="Button" parent="combat/mobile/control_divider/move_buttons" unique_id=1141585060]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = 217.0
+offset_right = -202.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = " ^ "
+
+[node name="down" type="Button" parent="combat/mobile/control_divider/move_buttons" unique_id=1192879577]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = 466.0
+offset_right = -200.0
+offset_bottom = 577.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = " v "
+
+[node name="left" type="Button" parent="combat/mobile/control_divider/move_buttons" unique_id=1108789549]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -411.0
+offset_top = 333.0
+offset_right = -322.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = " < "
+
+[node name="right" type="Button" parent="combat/mobile/control_divider/move_buttons" unique_id=2086603028]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 335.0
+offset_right = -86.0
+offset_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = " > "
+
+[node name="ability" type="Label" parent="combat/mobile/control_divider/move_buttons" unique_id=1397773948]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 1146.0
+offset_right = 605.0
+offset_bottom = 1215.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Ability"
+
+[node name="item" type="Label" parent="combat/mobile/control_divider/move_buttons" unique_id=21179774]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 1152.0
+offset_right = 825.0
+offset_bottom = 1221.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Item"
+
+[node name="attack_buttons" type="Control" parent="combat/mobile/control_divider" unique_id=871727322]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="move_1" type="Button" parent="combat/mobile/control_divider/attack_buttons" unique_id=792200751]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 461.0
+offset_right = -116.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "  1  "
+
+[node name="move_2" type="Button" parent="combat/mobile/control_divider/attack_buttons" unique_id=303143571]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = 212.0
+offset_right = -85.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "  2  "
+
+[node name="move_3" type="Button" parent="combat/mobile/control_divider/attack_buttons" unique_id=917827450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 39.0
+offset_right = 106.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "  3  "
+
+[node name="move_4" type="Button" parent="combat/mobile/control_divider/attack_buttons" unique_id=81590278]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 236.0
+offset_top = 49.0
+offset_right = 363.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "  4  "
+
+[node name="attack" type="Button" parent="combat/mobile/control_divider/attack_buttons" unique_id=273267091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = 295.00006
+offset_right = 176.0
+offset_bottom = 406.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0000024, 1.8)
+theme_override_font_sizes/font_size = 75
+text = "  1  "

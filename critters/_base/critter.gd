@@ -22,3 +22,11 @@ func _input(_event: InputEvent) -> void:
 		request_move.emit(Vector2i(1, 0))
 	elif Input.is_action_just_pressed("left"):
 		request_move.emit(Vector2i(-1, 0))
+
+func move_to(target_position:Vector3) -> void:
+	var move_tween:Tween = create_tween()
+	var hop_tween:Tween = create_tween()
+	
+	hop_tween.tween_property(self, "global_position:y", 0.2, 0.075).set_ease(Tween.EASE_OUT)
+	move_tween.tween_property(self, "global_position", target_position, 0.15)
+	hop_tween.tween_property(self, "global_position:y", target_position.y, 0.075).set_ease(Tween.EASE_IN)
